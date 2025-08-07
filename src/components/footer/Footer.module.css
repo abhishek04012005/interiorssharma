@@ -1,0 +1,309 @@
+.footer {
+  background: linear-gradient(to bottom, #fff, #f8f4f1);
+  color: #333;
+  position: relative;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.footerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footerSection Image {
+  width: 150px;
+  height: auto;
+}
+
+.footerLogo {
+  margin-bottom: 1rem;
+}
+
+.companyDesc {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f5be91;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  background: #333;
+  transform: translateY(-3px);
+}
+
+.footerTitle {
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footerTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background: #f5be91;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footerLinks a {
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footerLinks a:hover {
+  color: #f5be91;
+  transform: translateX(5px);
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactInfo p {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #666;
+}
+
+.contactInfo a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactInfo a:hover {
+  color: #f5be91;
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(245, 190, 145, 0.2);
+  padding: 1.5rem 0;
+}
+
+.footerBottomContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+}
+
+.footerBottomLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.footerBottomLinks a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerBottomLinks a:hover {
+  color: #f5be91;
+}
+
+
+.subLinks {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  border-left: 1px solid rgba(245, 190, 145, 0.2);
+}
+
+.subLinks li {
+  margin: 0.3rem 0;
+}
+
+.subLinks a {
+  font-size: 0.9rem;
+  color: #888;
+  transition: all 0.3s ease;
+}
+
+.subLinks a:hover {
+  color: #f5be91;
+  padding-left: 0.5rem;
+}
+
+/* Update existing footerLinks styles */
+.footerLinks > li {
+  margin-bottom: 1rem;
+}
+
+.footerLinks > li > a {
+  color: #666;
+  font-weight: 500;
+}
+
+.footerLinks > li > a:hover {
+  color: #f5be91;
+}
+
+
+.dropdownItem {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.menuItem a {
+  color: #666;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dropdownToggle {
+  color: #f5be91;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdownContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 1rem;
+  margin-top: 0.2rem;
+}
+
+.dropdownContent li {
+  margin: 0.5rem 0;
+}
+
+.dropdownContent a {
+  color: #888;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.dropdownContent a:hover {
+  color: #f5be91;
+  padding-left: 0.5rem;
+}
+
+/* Dropdown open state */
+.dropdownItem:hover .dropdownContent,
+.dropdownItem:focus-within .dropdownContent {
+  max-height: 200px; /* Adjust based on content */
+}
+
+.dropdownItem:hover .dropdownToggle,
+.dropdownItem:focus-within .dropdownToggle {
+  transform: rotate(45deg);
+  color: #f5be91;
+}
+
+.dropdownItem:hover .menuItem a,
+.dropdownItem:focus-within .menuItem a {
+  color: #f5be91;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dropdownContent {
+    padding-left: 0.5rem;
+  }
+  
+  .menuItem {
+    padding: 0.3rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .footerBottomContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerContent {
+    padding: 3rem 1rem;
+  }
+
+  .footerSection {
+    text-align: center;
+  }
+
+  .footerTitle::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+
+  .contactInfo p {
+    justify-content: center;
+  }
+}
