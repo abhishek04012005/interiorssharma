@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './About.module.css';
 import { FaTools, FaUsers, FaMedal, FaClock } from 'react-icons/fa';
-import Hero1Image from '../../assets/hero1.jpg'
+import Hero1Image from '../../assets/about.jpg'
 
 const stats = [
   {

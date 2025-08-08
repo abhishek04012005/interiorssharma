@@ -117,9 +117,11 @@ const Work = () => {
                     Explore More
                   </Link>
                 </button>
+                <button className={styles.contactButton}>
                 <Link href="/contact" className={styles.contactButton}>
                   Get Quote
                 </Link>
+                </button>
               </motion.div>
             </motion.div>
           </motion.div>

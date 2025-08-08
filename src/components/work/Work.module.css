@@ -61,10 +61,8 @@
   display: flex;
   justify-content: center;
 }
-.exploreButton {
+.cardActions button {
   padding: 0.8rem 1.5rem;
-  background: #f5be91;
-  color: #fff;
   border: none;
   border-radius: 30px;
   font-weight: 600;
@@ -74,6 +72,22 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+.exploreButton {
+  background: #f5be91;
+  color: #fff;
+}
+
+.contactButton {
+  background-color: #000000;
+ color: #fff;
+} 
+
+.exploreButton:hover, .contactButton:hover {
+  transform: translateY(-3px);
+}
+
+
 
 @media (max-width: 768px) {
   .workSection {

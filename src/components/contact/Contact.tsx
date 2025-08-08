@@ -15,16 +15,16 @@ const contactInfo = [
     id: 2,
     icon: <FaEnvelope />,
     title: 'Email',
-    details: 'info@sharmainteriors.com',
-    link: 'mailto:info@sharmainteriors.com'
+    details: 'contact@interiorssharma.com',
+    link: 'mailto:contact@interiorssharma.com'
   },
   {
     id: 3,
     icon: <FaMapMarkerAlt />,
     title: 'Location',
     details: `House No. 2696/49, Hansa Soc., 
-Hari Om Nagar, Santosh Bhuvan, 
-Nalasopara (E), Palghar-401209`,
+              Hari Om Nagar, Santosh Bhuvan, 
+              Nalasopara (E), Palghar-401209`,
     link: 'https://maps.google.com'
   },
   {
@@ -36,10 +36,16 @@ Nalasopara (E), Palghar-401209`,
   }
 ];
 
+const subjects = [
+  'Wooden Works',
+  'Panelling',
+  'Partitions',
+  'Ceilings'
+];
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
     subject: '',
     message: ''
@@ -51,7 +57,7 @@ const Contact = () => {
     console.log(formData);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -74,8 +80,8 @@ const Contact = () => {
         <div className={styles.contactGrid}>
           <div className={styles.contactInfo}>
             {contactInfo.map((info) => (
-              <a 
-                key={info.id} 
+              <a
+                key={info.id}
                 href={info.link}
                 className={styles.infoCard}
                 target={info.link.startsWith('http') ? '_blank' : '_self'}
@@ -102,16 +108,6 @@ const Contact = () => {
                   required
                 />
                 <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className={styles.formGrid}>
-                <input
                   type="tel"
                   name="phone"
                   placeholder="Your Phone"
@@ -119,15 +115,21 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                 />
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                />
               </div>
+              <select
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+                className={styles.selectInput}
+              >
+                <option value="" disabled>Select Service</option>
+                {subjects.map((subject) => (
+                  <option key={subject} value={subject}>
+                    {subject}
+                  </option>
+                ))}
+              </select>
               <textarea
                 name="message"
                 placeholder="Your Message"

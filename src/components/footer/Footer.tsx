@@ -124,17 +124,17 @@ const Footer = () => {
                     onClick={() => toggleDropdown(service.id)}
                   >
                     <Link href={service.path}>{service.title}</Link>
-                    <span className={`${styles.dropdownToggle} ${openDropdown === service.id ? styles.active : ''}`}>
+                    {/* <span className={`${styles.dropdownToggle} ${openDropdown === service.id ? styles.active : ''}`}>
                       +
-                    </span>
+                    </span> */}
                   </div>
-                  <ul className={`${styles.dropdownContent} ${openDropdown === service.id ? styles.active : ''}`}>
+                  {/* <ul className={`${styles.dropdownContent} ${openDropdown === service.id ? styles.active : ''}`}>
                     {service.subItems.map((item, index) => (
                       <li key={index}>
                         <Link href={item.path}>{item.name}</Link>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                 </li>
               ))}
             </ul>
@@ -150,7 +150,7 @@ const Footer = () => {
                 { icon: <FaMapMarkerAlt />, content: `House No. 2696/49, Hansa Soc., Hari Om Nagar, Santosh Bhuvan, Nalasopara (E), Palghar-401209`, href: 'https://maps.google.com' }
               ].map((contact, index) => (
                 <p key={index}>
-                  {contact.icon}{' '}
+                  <div>{contact.icon}</div>
                   <a href={contact.href} target={contact.href.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer">
                     {contact.content}
                   </a>

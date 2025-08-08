@@ -69,11 +69,7 @@
 }
 
 .iconWrapper {
-  width: 50px;
-  height: 50px;
-  background: #f5be91;
-  color: white;
-  border-radius: 50%;
+  color: #f5be91;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -182,4 +178,34 @@
   .formWrapper {
     padding: 1.5rem;
   }
+}
+
+.selectInput {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem) center;
+  padding-right: 2.5rem;
+}
+
+.selectInput:focus {
+  outline: none;
+  border-color: #f5be91;
+  box-shadow: 0 0 0 2px rgba(245, 190, 145, 0.2);
+}
+
+.selectInput:hover {
+  border-color: #f5be91;
+}
+
+.selectInput option {
+  padding: 1rem;
 }
