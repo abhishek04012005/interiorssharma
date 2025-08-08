@@ -53,7 +53,14 @@ export const services: ServiceItem[] = [
       {
         name: 'Conference Table',
         path: '/services/wooden-works/conference-table',
-        description: 'Bespoke conference tables designed for professional environments.',
+        description: `Bespoke conference tables designed for professional environments.
+        Bespoke conference tables designed for professional environments.
+        Bespoke conference tables designed for professional environments.
+        Bespoke conference tables designed for professional environments.
+        Bespoke conference tables designed for professional environments.
+        Bespoke conference tables designed for professional environments.
+        Bespoke conference tables designed for professional environments.
+        `,
         image: ConferenceTable,
       },
       {

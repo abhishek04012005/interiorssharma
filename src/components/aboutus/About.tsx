@@ -86,6 +86,8 @@ const About = () => {
             <p className={styles.description}>
               Our commitment to quality craftsmanship and innovative design has made us a trusted name in the industry. We take pride in delivering projects that exceed client expectations.
             </p>
+           
+
           </div>
         </div>
       </div>

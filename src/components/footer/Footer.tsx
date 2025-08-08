@@ -72,8 +72,12 @@ const Footer = () => {
               className={styles.footerLogo}
               priority
             />
+            <div className={styles.footerSlogen}>
+              Timeless Interiors, Legacy in Style.
+            </div>
             <p className={styles.companyDesc}>
-              Transforming spaces into extraordinary experiences through innovative design and exceptional craftsmanship.
+
+              Transforming commercial spaces into extraordinary experiences .
             </p>
             <div className={styles.socialLinks}>
               {[
@@ -102,7 +106,7 @@ const Footer = () => {
               {[
                 { name: 'Home', path: '/' },
                 { name: 'About Us', path: '/about' },
-                { name: 'Services', path: '/services' },
+                { name: 'Works', path: '/works' },
                 { name: 'Projects', path: '/projects' },
                 { name: 'Contact', path: '/contact' }
               ].map((link, index) => (
@@ -124,17 +128,7 @@ const Footer = () => {
                     onClick={() => toggleDropdown(service.id)}
                   >
                     <Link href={service.path}>{service.title}</Link>
-                    {/* <span className={`${styles.dropdownToggle} ${openDropdown === service.id ? styles.active : ''}`}>
-                      +
-                    </span> */}
                   </div>
-                  {/* <ul className={`${styles.dropdownContent} ${openDropdown === service.id ? styles.active : ''}`}>
-                    {service.subItems.map((item, index) => (
-                      <li key={index}>
-                        <Link href={item.path}>{item.name}</Link>
-                      </li>
-                    ))}
-                  </ul> */}
                 </li>
               ))}
             </ul>
@@ -165,7 +159,7 @@ const Footer = () => {
         <div className={styles.footerBottomContent}>
           <p>&copy; {new Date().getFullYear()} Sharma Interiors. All rights reserved.</p>
           <div className={styles.footerBottomLinks}>
-            <Link href="/privacy">Privacy Policy</Link> 
+            <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Service</Link>
           </div>
         </div>

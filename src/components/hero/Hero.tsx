@@ -13,11 +13,11 @@ const Hero = () => {
           <span className={styles.companyName}>Sharma Interiors</span>
         </h1>
         <p className={styles.subtitle}>
-Timeless Interiors, Legacy in Style.      
-  </p>
+          Timeless Interiors, Legacy in Style.
+        </p>
         <div className={styles.cta}>
-          <Link href="/projects" className={styles.primaryBtn}>
-            Explore Projects
+          <Link href="/works" className={styles.primaryBtn}>
+            Explore Works
             <span className={styles.btnArrow}>→</span>
           </Link>
           <Link href="/contact" className={styles.secondaryBtn}>

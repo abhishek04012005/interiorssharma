@@ -4,6 +4,8 @@ import styles from './ourclients.module.css';
 import { FaQuoteRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import ClientLogo1 from '../../assets/client/client1.png';
 import ClientLogo2 from '../../assets/client/client2.png';
+import ClientLogo3 from '../../assets/client/client3.png';
+import ClientLogo4 from '../../assets/client/client4.jpeg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -15,29 +17,29 @@ import 'swiper/css/navigation';
 const clients = [
   {
     id: 1,
-    name: 'Tech Hub Solutions',
+    name: 'Alkem Laboratories Limited',
     logo: ClientLogo1,
     project: 'Office Interior',
     testimonial: 'Exceptional craftsmanship and attention to detail. Transformed our workspace completely.'
   },
   {
     id: 2,
-    name: 'Luxury Hotels Group',
+    name: 'Cachet Pharmaceuticals',
     logo: ClientLogo2,
     project: 'Hotel Renovation',
     testimonial: 'Professional team with outstanding design sense. Delivered beyond expectations.'
   },
   {
     id: 3,
-    name: 'Green Valley Residences',
-    logo: '/clients/green-valley.png',
+    name: 'Venus Remedies Limited',
+    logo: ClientLogo3,
     project: 'Residential Complex',
     testimonial: 'Innovative solutions and timely delivery. A pleasure to work with.'
   },
   {
     id: 4,
-    name: 'City Mall',
-    logo: '/clients/city-mall.png',
+    name: 'Scorpion Group',
+    logo: ClientLogo4,
     project: 'Commercial Space',
     testimonial: 'Excellent work on our commercial space. Modern designs with practical solutions.'
   }

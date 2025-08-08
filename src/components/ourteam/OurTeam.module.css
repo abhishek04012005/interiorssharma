@@ -1,0 +1,254 @@
+.teamSection {
+  padding: 6rem 0;
+  background: linear-gradient(to bottom, #fff, #f8f4f1);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.titleAccent {
+  color: #f5be91;
+  position: relative;
+}
+
+.titleAccent::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #f5be91;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.sectionTitle:hover .titleAccent::after {
+  transform: scaleX(1);
+}
+
+.headerLine {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #f5be91, transparent);
+  margin: 1.5rem auto;
+}
+
+.sectionDescription {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.sliderContainer {
+  position: relative;
+  padding: 0 40px;
+  margin-top: 2rem;
+}
+
+.navigationButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f5be91;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 15px rgba(245, 190, 145, 0.2);
+}
+
+.navigationButton:hover {
+  background: #333;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prevButton {
+  left: -20px;
+}
+
+.nextButton {
+  right: -20px;
+}
+
+.teamCard {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(245, 190, 145, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.teamCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(245, 190, 145, 0.2);
+}
+
+.imageContainer {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.memberImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.teamCard:hover .memberImage {
+  transform: scale(1.05);
+}
+
+.socialOverlay {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  transition: bottom 0.3s ease;
+}
+
+.teamCard:hover .socialOverlay {
+  bottom: 0;
+}
+
+.socialLink {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #f5be91;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  background: #fff;
+  color: #f5be91;
+  transform: translateY(-3px);
+}
+
+.memberInfo {
+  padding: 1.5rem;
+}
+
+.memberName {
+  color: #333;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.memberPosition {
+  color: #f5be91;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(245, 190, 145, 0.2);
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.infoLabel {
+  color: #666;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.infoValue {
+  color: #333;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .sliderContainer {
+    padding: 0 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .teamSection {
+    padding: 4rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .imageContainer {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .teamSection {
+    padding: 3rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .memberName {
+    font-size: 1.1rem;
+  }
+
+  .imageContainer {
+    height: 200px;
+  }
+}

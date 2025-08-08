@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import styles from './Contact.module.css';
 import { FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
@@ -27,13 +28,7 @@ const contactInfo = [
               Nalasopara (E), Palghar-401209`,
     link: 'https://maps.google.com'
   },
-  {
-    id: 4,
-    icon: <FaClock />,
-    title: 'Working Hours',
-    details: 'Mon - Sat: 9AM - 6PM',
-    link: '#'
-  }
+
 ];
 
 const subjects = [
