@@ -1,11 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './Work.module.css';
-import WoodenWork from '../../assets/work/wooden_work.jpg'
-import Panelling from '../../assets/work/panelling.jpg'
-import Paritation from '../../assets/work/partiation.jpg'
-import Ceiling from '../../assets/work/ceiling.png'
 import { FaWrench, FaLayerGroup, FaColumns, FaChessBoard } from 'react-icons/fa';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import WoodenWorks from '../../assets/woodenworks/woodenworks.jpg'
+import PanellingWorkings from '../../assets/panellingworks/panellingworks.jpg'
+import Partitions from '../../assets/partitionworks/partitionworks.jpg'
+import Ceilings from '../../assets/ceilling/ceiling.jpg'
 
 const woodenWorks = [
   {
@@ -13,66 +15,51 @@ const woodenWorks = [
     title: 'Wooden Works',
     subtitle: 'Commercial',
     description: 'Elegant wooden interiors that blend functionality, timeless craftsmanship, warmth, durability, and natural beauty.',
-    image: WoodenWork,
+    image: WoodenWorks,
     icon: <FaWrench className={styles.cardIcon} />,
-    buttonText: 'Explore More'
+    buttonText: 'Explore More',
+    link: 'wooden-works'
   },
   {
     id: 2,
     title: 'Paneling',
     subtitle: 'Commercial',
     description: `Paneling is where structure meets style—whether you're dressing up walls or ceilings, it's a powerful tool for adding texture, warmth, and personality to interiors.`,
-    image: Panelling,
+    image: PanellingWorkings,
     icon: <FaLayerGroup className={styles.cardIcon} />,
-    buttonText: 'Explore More'
+    buttonText: 'Explore More',
+    link: 'paneling'
   },
   {
     id: 3,
     title: 'Partitions',
     subtitle: 'Commercial',
     description: 'Elegant space division with practical privacy, seamless flow, modern design, modern versatility, visual balance, acoustic comfort, and thoughtful detailing.',
-    image: Paritation,
+    image: Partitions,
     icon: <FaColumns className={styles.cardIcon} />,
-    buttonText: 'Explore More'
+    buttonText: 'Explore More',
+    link: 'partitions'
   },
   {
     id: 4,
     title: 'Ceilings',
     subtitle: 'Commercial',
     description: 'Ceilings shape the soul of a space - offering structure, style, and sensory impact. From sleek suspended grids to ornate coffered patterns, they balance acoustics, lighting, and visual flow.',
-    image: Ceiling,
+    image: Ceilings,
     icon: <FaChessBoard className={styles.cardIcon} />,
-    buttonText: 'Explore More'
-  }
-  ,
-  {
-    id: 5,
-    title: 'Ceilings',
-    subtitle: 'Commercial',
-    description: 'Ceilings shape the soul of a space - offering structure, style, and sensory impact. From sleek suspended grids to ornate coffered patterns, they balance acoustics, lighting, and visual flow.',
-    image: Ceiling,
-    icon: <FaChessBoard className={styles.cardIcon} />,
-    buttonText: 'Explore More'
-  }
-  ,
-  {
-    id: 6,
-    title: 'Ceilings',
-    subtitle: 'Commercial',
-    description: 'Ceilings shape the soul of a space - offering structure, style, and sensory impact. From sleek suspended grids to ornate coffered patterns, they balance acoustics, lighting, and visual flow.',
-    image: Ceiling,
-    icon: <FaChessBoard className={styles.cardIcon} />,
-    buttonText: 'Explore More'
+    buttonText: 'Explore More',
+    link: 'ceilings'
+
   }
 ];
 
 const Work = () => {
   return (
     <section className={styles.workSection}>
-      <div className={styles.container}>
+      <div className={styles.container}> <div className={styles.workGrid}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>
-            Our 
+            Our
             <span className={styles.titleAccent}>Works</span>
           </h2>
           <div className={styles.headerLine}></div>
@@ -80,40 +67,64 @@ const Work = () => {
             Crafting premium spaces with precision and passion
           </p>
         </div>
-
-        <div className={styles.workGrid}>
-          {woodenWorks.map((work) => (
-            <div key={work.id} className={styles.workCard}>
+        {woodenWorks.map((work, index) => (
+          <motion.div
+            key={work.id}
+            className={`${styles.workCard} ${index % 2 === 0 ? styles.imageLeft : styles.imageRight}`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className={styles.imageSection}>
               <div className={styles.imageWrapper}>
                 <Image
                   src={work.image}
                   alt={work.title}
-                  width={400}
-                  height={300}
+                  fill
                   className={styles.workImage}
+                  priority={index < 2}
                 />
-                <div className={styles.overlay}>
-                  <button className={styles.viewButton}>
-                    Explore More
-                    <span className={styles.buttonArrow}>→</span>
-                  </button>
-                </div>
-              </div>
-              <div className={styles.workInfo}>
-                <div className={styles.textContent}>
-                  <h3 className={styles.workTitle}>{work.title}</h3>
-                  <h4 className={styles.workSubtitle}>{work.subtitle}</h4>
-                  <p className={styles.workDescription}>{work.description}</p>
-                  <div className={styles.buttonWrapper}>
-                  <button className={styles.exploreButton}>
-                    {work.buttonText}
-                  </button>
-                </div>
-                </div>
+                <motion.div
+                  className={styles.imageOverlay}
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                  </motion.div>
+                </motion.div>
               </div>
             </div>
-          ))}
-        </div>
+            <motion.div
+              className={styles.contentSection}
+              initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.3, duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className={styles.icon}>{work.icon}</div>
+              <h3 className={styles.workTitle}>{work.title}</h3>
+              <h4 className={styles.workSubtitle}>{work.subtitle}</h4>
+              <div className={styles.contentLine}></div>
+              <p className={styles.workDescription}>{work.description}</p>
+              <motion.div className={styles.cardActions}>
+                <button className={styles.exploreButton}>
+                  <Link href={`/services/${work.link}`}>
+                    Explore More
+                  </Link>
+                </button>
+                <Link href="/contact" className={styles.contactButton}>
+                  Get Quote
+                </Link>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        ))}
+      </div>
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from './Footer.module.css';
 import { FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa6';
+import Logo from '../../assets/logo.png'
 
 const services = [
   {
@@ -64,7 +65,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className={styles.footerSection}>
             <Image
-              src="/images/logo.png"
+              src={Logo}
               alt="Sharma Interiors"
               width={180}
               height={55}
@@ -144,9 +145,9 @@ const Footer = () => {
             <h3 className={styles.footerTitle}>Contact Us</h3>
             <div className={styles.contactInfo}>
               {[
-                { icon: <FaPhone />, content: '+1 (234) 567-890', href: 'tel:+1234567890' },
+                { icon: <FaPhone />, content: '+91 9975662217', href: 'tel:+91 9975662217' },
                 { icon: <FaEnvelope />, content: 'contact@interiorssharma.com', href: 'mailto:contact@interiorssharma.com' },
-                { icon: <FaMapMarkerAlt />, content: '123 Design Street, Creative City, ST 12345 adfah ajfojnd oifjaof h foaijfo ohafoi', href: 'https://maps.google.com' }
+                { icon: <FaMapMarkerAlt />, content: `House No. 2696/49, Hansa Soc., Hari Om Nagar, Santosh Bhuvan, Nalasopara (E), Palghar-401209`, href: 'https://maps.google.com' }
               ].map((contact, index) => (
                 <p key={index}>
                   {contact.icon}{' '}
@@ -164,7 +165,7 @@ const Footer = () => {
         <div className={styles.footerBottomContent}>
           <p>&copy; {new Date().getFullYear()} Sharma Interiors. All rights reserved.</p>
           <div className={styles.footerBottomLinks}>
-            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/privacy">Privacy Policy</Link> 
             <Link href="/terms">Terms of Service</Link>
           </div>
         </div>

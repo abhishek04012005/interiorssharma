@@ -8,8 +8,8 @@ const contactInfo = [
     id: 1,
     icon: <FaPhone />,
     title: 'Phone',
-    details: '+1 (234) 567-8900',
-    link: 'tel:+1234567890'
+    details: '+91 9975662217',
+    link: 'tel:+919975662217'
   },
   {
     id: 2,

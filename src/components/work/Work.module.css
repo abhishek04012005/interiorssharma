@@ -1,5 +1,5 @@
 .workSection {
-  padding: 6rem 0;
+  padding: 2rem 0;
   background-color: #fff;
   position: relative;
 }
@@ -54,140 +54,6 @@
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
-}
-
-.workGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  padding: 1rem;
-}
-
-.workCard {
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(245, 190, 145, 0.1);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-}
-
-.workCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(245, 190, 145, 0.2);
-}
-
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-}
-
-.workImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(245, 190, 145, 0.95),
-    rgba(245, 190, 145, 0.7)
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-
-.imageWrapper:hover .overlay {
-  opacity: 1;
-}
-
-.imageWrapper:hover .workImage {
-  transform: scale(1.1);
-}
-
-.viewButton {
-  padding: 1rem 2rem;
-  background: #fff;
-  color: #f5be91;
-  border: none;
-  border-radius: 30px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.buttonArrow {
-  transition: transform 0.3s ease;
-}
-
-.viewButton:hover .buttonArrow {
-  transform: translateX(5px);
-}
-
-.viewButton:hover {
-  background: #333;
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.workInfo {
-  padding: 2rem;
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-}
-
-.iconWrapper {
-  background: #f5be9122;
-  padding: 1rem;
-  border-radius: 12px;
-  color: #f5be91;
-}
-
-.cardIcon {
-  font-size: 1.5rem;
-}
-
-.textContent {
-  flex: 1;
-}
-
-.workTitle {
-  font-size: 1.4rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.workSubtitle {
-  color: #f5be91;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.8rem;
-}
-
-.workDescription {
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.6;
 }
 
 .buttonWrapper {
@@ -247,5 +113,211 @@
 
   .workTitle {
     font-size: 1.2rem;
+  }
+}
+
+
+
+.workGrid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.workCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 6rem;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.workCard:hover {
+  box-shadow: 0 15px 40px rgba(245, 190, 145, 0.2);
+  transform: translateY(-5px);
+}
+
+.imageLeft {
+  grid-template-columns: 1fr 1fr;
+}
+
+.imageRight {
+  grid-template-columns: 1fr 1fr;
+  direction: rtl;
+}
+
+.imageRight .contentSection {
+  direction: ltr;
+}
+
+.imageSection {
+  position: relative;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.workImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.workCard:hover .workImage {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewGalleryBtn {
+  padding: 1rem 2rem;
+  background: #f5be91;
+  color: #ffffff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.buttonArrow {
+  transition: transform 0.3s ease;
+}
+
+.viewGalleryBtn:hover {
+  background: #000000;
+}
+
+.viewGalleryBtn:hover .buttonArrow {
+  transform: translateX(5px);
+}
+
+.contentSection {
+  padding: 2rem;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #f5be91;
+  margin-bottom: 1.5rem;
+}
+
+.workTitle {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.workSubtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.contentLine {
+  width: 80px;
+  height: 4px;
+  background: #f5be91;
+  margin: 1.5rem 0;
+}
+
+.workDescription {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.cardActions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.readMoreBtn, .contactBtn {
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.readMoreBtn {
+  background: #f5be91;
+  color: #ffffff;
+}
+
+.contactBtn {
+  background: transparent;
+  color: #333;
+  border: 2px solid #f5be91;
+}
+
+.readMoreBtn:hover, .contactBtn:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .workCard {
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+  
+  .imageSection {
+    height: 400px;
+  }
+  
+  .workTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .workCard {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .imageRight {
+    direction: ltr;
+  }
+  
+  .imageSection {
+    height: 300px;
+  }
+  
+  .workTitle {
+    font-size: 1.8rem;
+  }
+  
+  .cardActions {
+    flex-direction: column;
   }
 }
