@@ -54,7 +54,7 @@ export default function WoodenWorks({ service }: WoodenWorksProps) {
                     {/* <div className={styles.sectionLine}></div> */}
                 </div>
 
-                <div className={styles.servicesGrid}>
+                {/* <div className={styles.servicesGrid}>
                     {service.subItems.map((item, index) => (
                         <motion.div
                             key={index}
@@ -110,8 +110,66 @@ export default function WoodenWorks({ service }: WoodenWorksProps) {
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                </div> */}
 
+                <div className={styles.servicesGrid}>
+                    {service.subItems.map((item, index) => (
+                        <motion.div
+                            key={index}
+                            className={`${styles.serviceCard} ${index % 2 === 0 ? styles.imageLeft : styles.imageRight}`}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.2 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className={styles.imageSection}>
+                                <div className={styles.imageWrapper}>
+                                    <Image
+                                        src={item.image}
+                                        alt={item.name}
+                                        fill
+                                        className={styles.serviceImage}
+                                        priority={index < 2}
+                                    />
+                                    <motion.div
+                                        className={styles.imageOverlay}
+                                        initial={{ opacity: 0 }}
+                                        whileHover={{ opacity: 1 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        <motion.div
+                                            whileHover={{ scale: 1.05 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <Link href={item.path} className={styles.viewGalleryBtn}>
+                                                View Gallery
+                                            </Link>
+                                        </motion.div>
+                                    </motion.div>
+                                </div>
+                            </div>
+                            <motion.div
+                                className={styles.contentSection}
+                                initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.3, duration: 0.5 }}
+                                viewport={{ once: true }}
+                            >
+                                <h3 className={styles.cardTitle}>{item.name}</h3>
+                                <div className={styles.contentLine}></div>
+                                <p className={styles.cardDescription}>{item.description}</p>
+                                <motion.div className={styles.cardActions}>
+                                    <Link href={item.path} className={styles.readMoreBtn}>
+                                        Explore Details
+                                    </Link>
+                                    <Link href="/contact" className={styles.contactBtn}>
+                                        Get Quote
+                                    </Link>
+                                </motion.div>
+                            </motion.div>
+                        </motion.div>
+                    ))}
+                </div>
 
             </section>
 
