@@ -5,6 +5,11 @@ import { FaChevronLeft, FaChevronRight, FaLinkedinIn, FaEnvelope } from 'react-i
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
+import TeamMember1 from '../../assets/teams/1.jpeg'
+import TeamMember2 from '../../assets/teams/2.jpg'
+import TeamMember3 from '../../assets/teams/3.jpg'
+
+
 
 // Import Swiper styles
 import 'swiper/css';
@@ -15,7 +20,7 @@ const teamMembers = [
     id: 1,
     name: 'John Doe',
     position: 'Interior Designer',
-    image: '/team/member1.jpg',
+    image: TeamMember1,
     expertise: 'Residential Design',
     experience: '10+ years',
     linkedin: 'https://linkedin.com/in/johndoe',
@@ -25,7 +30,7 @@ const teamMembers = [
     id: 2,
     name: 'Jane Smith',
     position: 'Project Manager',
-    image: '/team/member2.jpg',
+    image: TeamMember2,
     expertise: 'Commercial Projects',
     experience: '8+ years',
     linkedin: 'https://linkedin.com/in/janesmith',
@@ -35,7 +40,7 @@ const teamMembers = [
     id: 3,
     name: 'Roy Smith',
     position: 'Project Manager',
-    image: '/team/member2.jpg',
+    image: TeamMember3,
     expertise: 'Commercial Projects',
     experience: '8+ years',
     linkedin: 'https://linkedin.com/in/janesmith',

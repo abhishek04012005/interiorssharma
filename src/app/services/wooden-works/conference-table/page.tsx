@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function CabinetsPage() {
   const woodenWorks = services.find(service => service.id === 1);
-  
+
   if (!woodenWorks) {
     notFound();
   }
@@ -25,10 +25,8 @@ export default function CabinetsPage() {
 
   return (
     <Subservices
-      parentService={{
-        title: woodenWorks.title,
-        path: woodenWorks.path,
-      }}
+      parentService={woodenWorks}
+
       subItem={{
         ...cabinetsService,
         image:

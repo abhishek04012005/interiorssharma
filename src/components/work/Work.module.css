@@ -110,7 +110,7 @@
 
 @media (max-width: 480px) {
   .workSection {
-    padding: 3rem 0;
+    padding: 1rem 0;
   }
 
   .sectionTitle {
@@ -301,7 +301,7 @@
 @media (max-width: 1024px) {
   .workCard {
     gap: 2rem;
-    padding: 1.5rem;
+    padding: 0.5rem;
   }
   
   .imageSection {

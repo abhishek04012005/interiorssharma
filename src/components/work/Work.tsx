@@ -141,7 +141,6 @@ const Work = () => {
           ))}
         </div>
         </div>
-
       </section>
       <QuotePopup
         isOpen={isPopupOpen}

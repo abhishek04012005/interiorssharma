@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Footer.module.css';
@@ -52,11 +52,8 @@ const services = [
 ];
 
 const Footer = () => {
-  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
 
-  const toggleDropdown = (index: number) => {
-    setOpenDropdown(openDropdown === index ? null : index);
-  };
+
 
   return (
     <footer className={styles.footer}>
@@ -120,15 +117,10 @@ const Footer = () => {
           {/* Services */}
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>Our Services</h3>
-            <ul className={styles.servicesDropdown}>
+            <ul className={styles.footerLinks}>
               {services.map((service) => (
                 <li key={service.id} className={styles.dropdownItem}>
-                  <div
-                    className={styles.menuItem}
-                    onClick={() => toggleDropdown(service.id)}
-                  >
-                    <Link href={service.path}>{service.title}</Link>
-                  </div>
+                        <Link href={service.path}>{service.title}</Link>
                 </li>
               ))}
             </ul>

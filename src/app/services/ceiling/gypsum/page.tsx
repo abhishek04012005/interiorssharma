@@ -26,12 +26,10 @@ export default function CabinetsPage() {
 
   return (
     <Subservices
-      parentService={{
-        title: woodenWorks.title,
-        path: woodenWorks.path,
-      }}
+      parentService={woodenWorks}
       subItem={{
         name: cabinetsService.name,
+        path: cabinetsService.path,
         description: cabinetsService.description,
         image: typeof cabinetsService.image === 'string'
           ? cabinetsService.image

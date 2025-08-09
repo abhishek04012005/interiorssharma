@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import styles from './Contact.module.css';
-import { FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { FaPhone } from "react-icons/fa6";
 
 const contactInfo = [
