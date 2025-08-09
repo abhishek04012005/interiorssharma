@@ -133,7 +133,7 @@ const Footer = () => {
               {[
                 { icon: <FaPhone />, content: '+91 9975662217', href: 'tel:+91 9975662217' },
                 { icon: <FaEnvelope />, content: 'contact@interiorssharma.com', href: 'mailto:contact@interiorssharma.com' },
-                { icon: <FaMapMarkerAlt />, content: `House No. 2696/49, Hansa Soc., Hari Om Nagar, Santosh Bhuvan, Nalasopara (E), Palghar-401209`, href: 'https://maps.google.com' }
+                { icon: <FaMapMarkerAlt />, content: `House No. 2696/49, Hansa Soc., Hari Om Nagar, Santosh Bhuvan, Nalasopara (E), Palghar-401209`, href: 'https://www.google.com/maps/place/Om+Nagar+Rd,+Vasai+West,+Nala+Sopara,+Vasai-Virar,+Maharashtra+401202/@19.3914537,72.8245959,17.21z/data=!4m10!1m2!2m1!1sHouse+No.+2696%2F49,+Hansa+Soc.,+Hari+Om+Nagar,+Santosh+Bhuvan,+Nalasopara+(E),+Palghar-401209!3m6!1s0x3be7aeb7923072f9:0xd0d980a192937b3!8m2!3d19.391465!4d72.8258795!15sClxIb3VzZSBOby4gMjY5Ni80OSwgSGFuc2EgU29jLiwgSGFyaSBPbSBOYWdhciwgU2FudG9zaCBCaHV2YW4sIE5hbGFzb3BhcmEgKEUpLCBQYWxnaGFyLTQwMTIwOZIBBXJvdXRl4AEA!16s%2Fg%2F1hc4bgg42?entry=ttu&g_ep=EgoyMDI1MDgwNi4wIKXMDSoASAFQAw%3D%3D' }
               ].map((contact, index) => (
                 <p key={index}>
                   <div>{contact.icon}</div>

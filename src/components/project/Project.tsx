@@ -3,38 +3,81 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Project.module.css';
-import Project1 from '../../assets/projects/1.jpg';
-import Project2 from '../../assets/projects/2.jpg'
+import Project1 from '../../assets/projects/jpmorgan.png'
+import Project2 from '../../assets/projects/mgm.png'
+import Project3 from '../../assets/projects/ihc.png'
+import Project4 from '../../assets/projects/ishwaryahealth.png'
+import Project5 from '../../assets/projects/galpha.jpg'
+import Project6 from '../../assets/projects/sd.jpg'
 
 const projects = [
-    {
-        id: 1,
-        title: 'Modern Office Interior',
-        category: 'Commercial',
-        image: Project1,
-        description: 'Contemporary workspace design with optimal functionality',
-        location: 'Mumbai, India',
-        area: '2500 sq.ft',
-        duration: '3 months'
-    },
-    {
-        id: 2,
-        title: 'Luxury Villa Design',
-        category: 'Residential',
-        image: Project2,
-        description: 'High-end residential interior with premium finishes',
-        location: 'Delhi, India',
-        area: '4000 sq.ft',
-        duration: '6 months'
-    },
-
+  {
+    id: 1,
+    title: 'JP Morgan Tata Ticno',
+    category: 'Commercial',
+    image: Project1,
+    description: 'Corporate office interiors with sleek design, collaborative zones, and smart lighting.',
+    location: 'Andheri, Mumbai, India',
+    area: '3200 sq.ft',
+    duration: '4 months'
+  },
+  {
+    id: 2,
+    title: 'MGM Hospital ',
+    category: 'Healthcare',
+    image: Project2,
+    description: 'Functional and hygienic hospital interiors with patient-centric design and durable materials.',
+    location: 'Kamothe, Navi Mumbai, India',
+    area: '5000 sq.ft',
+    duration: '5 months'
+  },
+  {
+    id: 3,
+    title: 'Indicame Health Care',
+    category: 'Commercial',
+    image: Project3,
+    description: 'Modern healthcare workspace with ergonomic layouts and efficient space planning.',
+    location: 'Bandra, Mumbai, India',
+    area: '2800 sq.ft',
+    duration: '3.5 months'
+  },
+  {
+    id: 4,
+    title: 'Ishwarya Health Care Group',
+    category: 'Healthcare',
+    image: Project4,
+    description: 'Premium healthcare interiors with advanced infrastructure and calming aesthetics.',
+    location: 'Chennai, Tamil Nadu, India',
+    area: '4500 sq.ft',
+    duration: '6 months'
+  },
+  {
+    id: 5,
+    title: 'Galpha Laboratory',
+    category: 'Commercial',
+    image: Project5,
+    description: 'State-of-the-art laboratory setup with precision zoning and compliance-ready finishes.',
+    location: 'Thane, Maharashtra, India',
+    area: '2700 sq.ft',
+    duration: '4 months'
+  },
+  {
+    id: 6,
+    title: 'Shree Dhootapapeshwar Ltd',
+    category: 'Industrial',
+    image: Project6,
+    description: 'Ayurvedic manufacturing facility with cleanroom partitions and efficient workflow design.',
+    location: 'Dadar, Mumbai, India',
+    area: '6000 sq.ft',
+    duration: '5.5 months'
+  }
 ];
+
 
 const categories = ['All', 'Commercial', 'Residential', 'Retail'];
 
 export default function Project() {
     const [selectedCategory, setSelectedCategory] = useState('All');
-    // const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
     const filteredProjects = selectedCategory === 'All'
         ? projects
