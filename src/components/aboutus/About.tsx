@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './About.module.css';
-import { FaTools, FaUsers, FaMedal, FaClock } from 'react-icons/fa';
+import { FaTools, FaUsers, FaMedal, FaHandshake } from 'react-icons/fa';
 import Hero1Image from '../../assets/about.jpg'
 
 const stats = [
@@ -25,9 +25,9 @@ const stats = [
   },
   {
     id: 4,
-    icon: <FaClock />,
-    number: '24/7',
-    label: 'Customer Support'
+    icon: <FaHandshake />,
+    number: '100%',
+    label: 'Commitment to Quality'
   }
 ];
 

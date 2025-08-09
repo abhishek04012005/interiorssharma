@@ -2,10 +2,13 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import styles from './ourclients.module.css';
 import { FaQuoteRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import ClientLogo1 from '../../assets/client/client1.png';
-import ClientLogo2 from '../../assets/client/client2.png';
-import ClientLogo3 from '../../assets/client/client3.png';
-import ClientLogo4 from '../../assets/client/client4.jpeg';
+import ClientLogo1 from '../../assets/client/jpmorgan.png';
+import ClientLogo2 from '../../assets/client/gl.png';
+import ClientLogo3 from '../../assets/client/dhootap.png';
+import ClientLogo4 from '../../assets/client/indicame.png';
+import ClientLogo5 from '../../assets/client/ishwarya.png';
+import ClientLogo6 from '../../assets/client/mgm.png';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -16,33 +19,48 @@ import 'swiper/css/navigation';
 const clients = [
   {
     id: 1,
-    name: 'Alkem Laboratories Limited',
+    name: 'JP Morgan',
     logo: ClientLogo1,
-    project: 'Office Interior',
-    testimonial: 'Exceptional craftsmanship and attention to detail. Transformed our workspace completely.'
+    project: 'Corporate Office Interior',
+    testimonial: 'The team delivered a sleek, functional workspace that reflects our brand’s professionalism. Truly impressive execution.'
   },
   {
     id: 2,
-    name: 'Cachet Pharmaceuticals',
+    name: 'Galpha Laboratory',
     logo: ClientLogo2,
-    project: 'Hotel Renovation',
-    testimonial: 'Professional team with outstanding design sense. Delivered beyond expectations.'
+    project: 'Laboratory Infrastructure',
+    testimonial: 'Precision and compliance were key, and they nailed both. Our lab setup is efficient, clean, and future-ready.'
   },
   {
     id: 3,
-    name: 'Venus Remedies Limited',
+    name: 'Shree Dhootapapeshwar Ltd',
     logo: ClientLogo3,
-    project: 'Residential Complex',
-    testimonial: 'Innovative solutions and timely delivery. A pleasure to work with.'
+    project: 'Ayurvedic Manufacturing Facility',
+    testimonial: 'Their understanding of industrial needs and traditional aesthetics was remarkable. A seamless blend of heritage and utility.'
   },
   {
     id: 4,
-    name: 'Scorpion Group',
+    name: 'Indicame Health Care',
     logo: ClientLogo4,
-    project: 'Commercial Space',
-    testimonial: 'Excellent work on our commercial space. Modern designs with practical solutions.'
+    project: 'Healthcare Office Interior',
+    testimonial: 'Smart layouts and calming design elements made our healthcare space both functional and welcoming. Highly recommended.'
+  },
+  {
+    id: 5,
+    name: 'Ishwarya Health Care Group',
+    logo: ClientLogo5,
+    project: 'Hospital Interior Design',
+    testimonial: 'They created a healing environment with thoughtful design and durable materials. Patients and staff love the transformation.'
+  },
+  {
+    id: 6,
+    name: 'MGM Hospital',
+    logo: ClientLogo6,
+    project: 'Medical Facility Renovation',
+    testimonial: 'From patient rooms to operation zones, every detail was handled with care. The result is a modern, efficient hospital space.'
   }
 ];
+
 
 const OurClients = () => {
   const swiperRef = useRef<SwiperType | null>(null);

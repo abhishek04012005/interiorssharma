@@ -5,7 +5,7 @@ import { FaQuoteLeft, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
-import Client1 from '../../assets/testimonial/1.jpeg'
+import Client1 from '../../assets/testimonial/1.jpg'
 import Client2 from '../../assets/testimonial/2.jpg';
 import Client3 from '../../assets/testimonial/3.jpg';
 import Client4 from '../../assets/testimonial/4.jpg';
@@ -17,7 +17,7 @@ import 'swiper/css/navigation';
 const testimonials = [
   {
     id: 1,
-    name: 'John Smith',
+    name: 'S. Tiwari',
     position: 'Business Owner',
     image: Client2,
     quote: 'Sharma Interiors transformed our office space into a modern, functional environment. Their attention to detail and professionalism exceeded our expectations.',
@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     id: 2,
-    name: 'Sarah Johnson',
+    name: 'R.K. Singh',
     position: 'Restaurant Manager',
     image: Client1,
     quote: 'The wooden work and partitions they installed are simply outstanding. The team was efficient, and the results were exactly what we envisioned.',
@@ -33,7 +33,7 @@ const testimonials = [
   },
   {
     id: 3,
-    name: 'Michael Brown',
+    name: 'A. Patel',
     position: 'Hotel Director',
     image: Client3,
     quote: 'Their expertise in ceiling work and paneling is remarkable. They delivered the project on time and maintained high quality throughout.',
@@ -41,7 +41,7 @@ const testimonials = [
   },
   {
     id: 4,
-    name: 'Emily Davis',
+    name: 'J. Sharma',
     position: 'Interior Designer',
     image: Client4,
     quote: 'Sharma Interiors has an incredible eye for design. They helped us create a cohesive look throughout our office that truly reflects our brand.',

@@ -5,9 +5,8 @@ import { FaChevronLeft, FaChevronRight, FaLinkedinIn, FaEnvelope } from 'react-i
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
-import TeamMember1 from '../../assets/teams/1.jpeg'
-import TeamMember2 from '../../assets/teams/2.jpg'
-import TeamMember3 from '../../assets/teams/3.jpg'
+import TeamMember1 from '../../assets/teams/1.webp'
+
 
 
 
@@ -18,34 +17,15 @@ import 'swiper/css/navigation';
 const teamMembers = [
   {
     id: 1,
-    name: 'John Doe',
+    name: 'S.S. Sharma',
     position: 'Interior Designer',
     image: TeamMember1,
     expertise: 'Residential Design',
     experience: '10+ years',
     linkedin: 'https://linkedin.com/in/johndoe',
     email: 'john@sharmainteriors.com'
-  },
-  {
-    id: 2,
-    name: 'Jane Smith',
-    position: 'Project Manager',
-    image: TeamMember2,
-    expertise: 'Commercial Projects',
-    experience: '8+ years',
-    linkedin: 'https://linkedin.com/in/janesmith',
-    email: 'jane@sharmainteriors.com'
-  },
- {
-    id: 3,
-    name: 'Roy Smith',
-    position: 'Project Manager',
-    image: TeamMember3,
-    expertise: 'Commercial Projects',
-    experience: '8+ years',
-    linkedin: 'https://linkedin.com/in/janesmith',
-    email: 'jane@sharmainteriors.com'
-  },];
+  }
+];
 
 const OurTeam = () => {
   const swiperRef = useRef<SwiperType | null>(null);
