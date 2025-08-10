@@ -1,169 +1,172 @@
 .terms {
-    background-color: white;
+    background: linear-gradient(to bottom, #fff, #f8f4f1);
     padding-block: 5rem;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
-  min-height: 100vh;
-  background: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    min-height: 100vh;
+    background: #ffffff;
 }
 
 .header {
-  text-align: center;
-  margin-bottom: 4rem;
+    text-align: center;
+    margin-bottom: 4rem;
 }
 
 .header h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
 }
 
 .headerLine {
-  width: 80px;
-  height: 3px;
-  background: #f5be91;
-  margin: 1rem auto;
+    width: 80px;
+    height: 3px;
+    background: #f5be91;
+    margin: 1rem auto;
 }
 
 .header p {
-  color: #666;
-  font-style: italic;
+    color: #666;
+    font-style: italic;
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
 }
 
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  position: sticky;
-  top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: sticky;
+    top: 2rem;
 }
 
 .navButton {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: #333;
-  text-align: left;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navButton:hover {
-  background: #f8f9fa;
-  transform: translateX(5px);
+    background: #f8f9fa;
+    transform: translateX(5px);
 }
 
 .navButton.active {
-  background: #f5be91;
-  color: white;
+    background: #f5be91;
+    color: white;
 }
 
 .icon {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 .content {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .section {
-  display: none;
+    display: none;
 }
 
 .section.visible {
-  display: block;
+    display: block;
 }
 
 .sectionTitle {
-  color: #333;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #f5be91;
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f5be91;
 }
 
 .sectionContent {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
 }
 
 .subsection {
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
 }
 
 .subsection h3 {
-  color: #444;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 
-.subsection ul, .itemsList {
-  list-style: none;
-  padding: 0;
+.subsection ul,
+.itemsList {
+    list-style: none;
+    padding: 0;
 }
 
-.subsection li, .itemsList li {
-  color: #666;
-  margin-bottom: 0.8rem;
-  padding-left: 1.5rem;
-  position: relative;
+.subsection li,
+.itemsList li {
+    color: #666;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
 }
 
-.subsection li::before, .itemsList li::before {
-  content: "•";
-  color: #f5be91;
-  position: absolute;
-  left: 0;
+.subsection li::before,
+.itemsList li::before {
+    content: "•";
+    color: #f5be91;
+    position: absolute;
+    left: 0;
 }
 
 @media (max-width: 968px) {
-  .wrapper {
-    grid-template-columns: 1fr;
-  }
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
 
-  .sidebar {
-    position: relative;
-    top: 0;
-    margin-bottom: 2rem;
-  }
+    .sidebar {
+        position: relative;
+        top: 0;
+        margin-bottom: 2rem;
+    }
 }
 
 @media (max-width: 640px) {
-  .container {
-    padding: 1rem;
-  }
+    .container {
+        padding: 1rem;
+    }
 
-  .header h1 {
-    font-size: 2rem;
-  }
+    .header h1 {
+        font-size: 2rem;
+    }
 
-  .content {
-    padding: 1rem;
-  }
+    .content {
+        padding: 1rem;
+    }
 
-  .sectionTitle {
-    font-size: 1.5rem;
-  }
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
 }

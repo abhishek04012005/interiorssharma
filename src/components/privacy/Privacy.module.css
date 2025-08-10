@@ -1,5 +1,5 @@
 .privacy {
-  background-color: white;
+  background: linear-gradient(to bottom, #fff, #f8f4f1);
   width: 100%;
   padding-block: 5rem;
 }

@@ -7,8 +7,6 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import TeamMember1 from '../../assets/teams/1.webp'
 
-
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -42,14 +40,14 @@ const OurTeam = () => {
         </div>
 
         <div className={styles.sliderContainer}>
-          <button 
+          <button
             className={`${styles.navigationButton} ${styles.prevButton}`}
             onClick={() => swiperRef.current?.slidePrev()}
             aria-label="Previous slide"
           >
             <FaChevronLeft />
           </button>
-          <button 
+          <button
             className={`${styles.navigationButton} ${styles.nextButton}`}
             onClick={() => swiperRef.current?.slideNext()}
             aria-label="Next slide"
@@ -96,15 +94,15 @@ const OurTeam = () => {
                       priority
                     />
                     <div className={styles.socialOverlay}>
-                      <a 
-                        href={member.linkedin} 
-                        target="_blank" 
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className={styles.socialLink}
                       >
                         <FaLinkedinIn />
                       </a>
-                      <a 
+                      <a
                         href={`mailto:${member.email}`}
                         className={styles.socialLink}
                       >
