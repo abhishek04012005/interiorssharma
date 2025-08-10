@@ -26,7 +26,7 @@
 .headerLine {
   width: 80px;
   height: 3px;
-  background: #c8a97e;
+  background: #f5be91;
   margin: 1rem auto;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .navButton.active {
-  background: #c8a97e;
+  background: #f5be91;
   color: white;
 }
 
@@ -105,7 +105,7 @@
   color: #333;
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid #c8a97e;
+  border-bottom: 2px solid #f5be91;
   padding-bottom: 0.5rem;
 }
 
@@ -137,7 +137,7 @@
 
 .itemsList li::before, .subsection ul li::before {
   content: "•";
-  color: #c8a97e;
+  color: #f5be91;
   position: absolute;
   left: 0;
 }
@@ -159,7 +159,7 @@
 
 .contactIcon {
   font-size: 1rem;
-  color: #c8a97e;
+  color: #f5be91;
 }
 
 .contactInfo p {

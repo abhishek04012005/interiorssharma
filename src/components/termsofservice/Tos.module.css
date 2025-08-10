@@ -25,7 +25,7 @@
 .headerLine {
   width: 80px;
   height: 3px;
-  background: #c8a97e;
+  background: #f5be91;
   margin: 1rem auto;
 }
 
@@ -69,7 +69,7 @@
 }
 
 .navButton.active {
-  background: #c8a97e;
+  background: #f5be91;
   color: white;
 }
 
@@ -97,7 +97,7 @@
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #c8a97e;
+  border-bottom: 2px solid #f5be91;
 }
 
 .sectionContent {
@@ -133,7 +133,7 @@
 
 .subsection li::before, .itemsList li::before {
   content: "•";
-  color: #c8a97e;
+  color: #f5be91;
   position: absolute;
   left: 0;
 }
