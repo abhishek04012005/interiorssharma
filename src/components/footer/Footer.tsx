@@ -59,7 +59,6 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.footerGrid}>
-          {/* Company Info */}
           <div className={styles.footerSection}>
             <Image
               src={Logo}
@@ -151,7 +150,7 @@ const Footer = () => {
 
       <div className={styles.footerBottom}>
         <div className={styles.footerBottomContent}>
-          <p>&copy; {new Date().getFullYear()} Sharma Interiors. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Sharma Interiors. All rights reserved. <a href="https://technologies.ditvi.org">Powered by Ditvi Technologies</a></p>
           <div className={styles.footerBottomLinks}>
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Service</Link>
