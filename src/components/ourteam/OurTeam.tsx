@@ -9,8 +9,6 @@ import TeamMember1 from '../../assets/teams/1.webp'
 
 
 
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -18,7 +16,7 @@ const teamMembers = [
   {
     id: 1,
     name: 'S.S. Sharma',
-    position: 'Interior Designer',
+    position: 'Commercial Designer',
     image: TeamMember1,
     expertise: 'Residential Design',
     experience: '10+ years',
