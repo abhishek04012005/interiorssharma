@@ -15,11 +15,11 @@ import 'swiper/css/navigation';
 const teamMembers = [
   {
     id: 1,
-    name: 'S.S. Sharma',
+    name: 'Mr. S.S. Sharma',
     position: 'Commercial Designer',
     image: TeamMember1,
-    expertise: 'Residential Design',
-    experience: '10+ years',
+    expertise: 'Commercial Designer',
+    experience: '20+ years',
     linkedin: 'https://linkedin.com/in/johndoe',
     email: 'john@sharmainteriors.com'
   }

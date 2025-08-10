@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './Privacy.module.css';
-import { FaChild, FaUserLock, FaInfoCircle, FaEnvelope } from 'react-icons/fa';
+import { FaChild, FaUserLock, FaInfoCircle, FaEnvelope, FaHome } from 'react-icons/fa';
+import {FaPhone} from 'react-icons/fa6'
 
 const sections = [
   {
@@ -144,11 +145,11 @@ export default function Privacy() {
             >
               <h2>Contact Us</h2>
               <div className={styles.contactCard}>
-                <FaEnvelope className={styles.contactIcon} />
+
                 <div className={styles.contactInfo}>
-                  <p>Email: contact@interiorssharma.com</p>
-                  <p>Phone: +91 9975662217</p>
-                  <p>Address: House No. 2696/49, Hansa Soc., Nalasopara (E), Palghar-401209</p>
+                  <p><FaEnvelope className={styles.contactIcon} /> Email: contact@interiorssharma.com</p>
+                  <p><FaPhone className={styles.contactIcon} /> Phone: +91 9975662217</p>
+                  <p><FaHome className={styles.contactIcon} /> Address: House No. 2696/49, Hansa Soc., Nalasopara (E), Palghar-401209</p>
                 </div>
               </div>
             </motion.section>

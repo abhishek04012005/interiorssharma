@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import styles from './Contact.module.css';
 import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { FaPhone } from "react-icons/fa6";
+import { supabase } from '../../supabase/Supabase'
+import { toast } from 'react-hot-toast';
 
 const contactInfo = [
   {
@@ -41,13 +43,38 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    subject: '',
+    dropdown: '',
     message: ''
   });
+  const [, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('contacts')
+        .insert([
+          {
+            name: formData.name,
+            phone: formData.phone,
+            dropdown: formData.dropdown,
+            message: formData.message,
+            created_at: new Date().toISOString()
+          }
+        ]);
+
+      if (error) throw error;
+
+      toast.success('Message sent successfully!');
+      setFormData({ name: '', phone: '', dropdown: '', message: '' });
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error('Failed to send message');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -110,16 +137,16 @@ const Contact = () => {
                 />
               </div>
               <select
-                name="subject"
-                value={formData.subject}
+                name="dropdown"
+                value={formData.dropdown}
                 onChange={handleChange}
                 required
                 className={styles.selectInput}
               >
                 <option value="" disabled>Select Service</option>
-                {subjects.map((subject) => (
-                  <option key={subject} value={subject}>
-                    {subject}
+                {subjects.map((dropdown) => (
+                  <option key={dropdown} value={dropdown}>
+                    {dropdown}
                   </option>
                 ))}
               </select>

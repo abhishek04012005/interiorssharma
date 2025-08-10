@@ -105,7 +105,9 @@ const Footer = () => {
                 { name: 'About Us', path: '/about' },
                 { name: 'Works', path: '/works' },
                 { name: 'Projects', path: '/projects' },
-                { name: 'Contact', path: '/contact' }
+                { name: 'Contact', path: '/contact' },
+                { name: 'Admin', path: '/admin' }
+
               ].map((link, index) => (
                 <li key={index}>
                   <Link href={link.path}>{link.name}</Link>
@@ -120,7 +122,7 @@ const Footer = () => {
             <ul className={styles.footerLinks}>
               {services.map((service) => (
                 <li key={service.id} className={styles.dropdownItem}>
-                        <Link href={service.path}>{service.title}</Link>
+                  <Link href={service.path}>{service.title}</Link>
                 </li>
               ))}
             </ul>

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 import styles from './PopUpModel.module.css';
+import { supabase } from '@/supabase/Supabase';
+import toast from 'react-hot-toast';
 
 interface QuotePopupProps {
   isOpen: boolean;
@@ -14,6 +16,7 @@ export default function QuotePopup({ isOpen, onClose, selectedWork }: QuotePopup
     phone: '',
     service: selectedWork || 'Wooden Works',
   });
+  const [, setIsSubmitting] = useState(false);
 
   const services = [
     'Wooden Works',
@@ -24,8 +27,23 @@ export default function QuotePopup({ isOpen, onClose, selectedWork }: QuotePopup
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
     try {
-      console.log('Form submitted:', formData);
+      const { error } = await supabase
+        .from('quote_requests')
+        .insert([
+          {
+            name: formData.name,
+            phone: formData.phone,
+            service: formData.service,
+            created_at: new Date().toISOString()
+          }
+        ]);
+
+      if (error) throw error;
+
+      toast.success('Quote request submitted successfully!');
       setFormData({
         name: '',
         phone: '',
@@ -34,6 +52,9 @@ export default function QuotePopup({ isOpen, onClose, selectedWork }: QuotePopup
       onClose();
     } catch (error) {
       console.error('Error submitting form:', error);
+      toast.error('Failed to submit quote request');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
