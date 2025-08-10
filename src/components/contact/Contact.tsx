@@ -28,7 +28,6 @@ const contactInfo = [
               Nalasopara (E), Palghar-401209`,
     link: 'https://maps.google.com'
   },
-
 ];
 
 const subjects = [
@@ -48,7 +47,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log(formData);
   };
 
