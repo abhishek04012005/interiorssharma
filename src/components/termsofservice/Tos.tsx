@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './Tos.module.css';
 import { FaHandshake, FaFileContract, FaUserShield, FaMoneyBillWave, FaCopyright } from 'react-icons/fa';
-import { div } from 'framer-motion/client';
 
 const sections = [
     {
@@ -69,7 +68,7 @@ const sections = [
 
 export default function Tos() {
     const [activeSection, setActiveSection] = useState('acceptance');
-    const [isAnimating, setIsAnimating] = useState(false);
+    const [, setIsAnimating] = useState(false);
 
     const handleSectionChange = (sectionId: string) => {
         setIsAnimating(true);
