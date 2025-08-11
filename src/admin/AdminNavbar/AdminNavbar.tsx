@@ -1,138 +1,93 @@
-'use client';
-import { useState, useEffect } from 'react';
+"use client";
+import { useState, useEffect, JSX } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import { FaUsers, FaQuoteRight, FaSignOutAlt, FaBars, FaTimes } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
+import { FaUsers, FaQuoteRight, FaSignOutAlt } from 'react-icons/fa';
 import styles from './AdminNavbar.module.css';
 import { toast } from 'react-hot-toast';
 import Image from 'next/image';
-import Logo from "../../assets/logo.png"
+import Logo from "../../assets/logo.png";
+
+interface NavItem {
+  id: number;
+  title: string;
+  path: string;
+  icon: JSX.Element;
+}
+
+const navItems: NavItem[] = [
+  { id: 1, title: 'Contact Requests', path: '/admin/dashboard/contact', icon: <FaUsers /> },
+  { id: 2, title: 'Quote Requests', path: '/admin/dashboard/enquiry', icon: <FaQuoteRight /> },
+];
 
 export default function AdminNavbar() {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
-    const router = useRouter();
-    const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
-    // Close mobile menu when route changes
-    useEffect(() => {
-        setIsMobileMenuOpen(false);
-    }, [pathname]);
-
-    // Handle scroll effects
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    // Close menu when clicking outside
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            const navElement = document.getElementById('mobile-nav');
-            if (isMobileMenuOpen && navElement && !navElement.contains(event.target as Node)) {
-                setIsMobileMenuOpen(false);
-            }
-        };
-
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, [isMobileMenuOpen]);
-
-    const handleLogout = () => {
-        document.cookie = 'adminAuth=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT';
-        localStorage.removeItem('adminAuth');
-        toast.success('Logged out successfully');
-        router.push('/admin/login');
-        router.refresh();
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
     };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    const navLinks = [
-        {
-            path: '/admin/dashboard/contact',
-            label: 'Contact Requests',
-            icon: <FaUsers />
-        },
-        {
-            path: '/admin/dashboard/enquiry',
-            label: 'Quote Requests',
-            icon: <FaQuoteRight />
-        }
-    ];
+  const handleLogout = () => {
+    document.cookie = 'adminAuth=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT';
+    localStorage.removeItem('adminAuth');
+    toast.success('Logged out successfully');
+    router.push('/admin/login');
+    router.refresh();
+  };
 
-    return (
-        <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
-            <div className={styles.navContainer}>
-                <motion.div
-                    className={styles.logo}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <Link href="/admin/dashboard">
-                        <Image 
-                            className={styles.logoImage} 
-                            src={Logo} 
-                            alt="Sharma Interiors" 
-                            width={150} 
-                            height={50}
-                            priority 
-                        />
-                    </Link>
-                </motion.div>
+  return (
+    <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
+      <div className={styles.navContainer}>
+        <Link href="/admin/dashboard" className={styles.logo}>
+          <Image 
+            className={styles.logoImage} 
+            src={Logo} 
+            alt="Sharma Interiors" 
+            width={150} 
+            height={50} 
+            priority
+          />
+        </Link>
 
-                <div className={styles.mobileContainer} id="mobile-nav">
-                    <button
-                        className={styles.mobileMenuButton}
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-                    >
-                        {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-                    </button>
+        <div 
+          className={`${styles.hamburger} ${isOpen ? styles.active : ''}`} 
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <div className={styles.hamburgerIcon}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
 
-                    <AnimatePresence>
-                        <motion.div
-                            className={`${styles.navLinks} ${isMobileMenuOpen ? styles.active : ''}`}
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.path}
-                                    href={link.path}
-                                    className={`${styles.navLink} ${pathname === link.path ? styles.active : ''}`}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                    <motion.span
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                        className={styles.linkContent}
-                                    >
-                                        {link.icon}
-                                        <span>{link.label}</span>
-                                    </motion.span>
-                                </Link>
-                            ))}
-
-                            <motion.button
-                                onClick={handleLogout}
-                                className={styles.logoutButton}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <FaSignOutAlt />
-                                <span>Logout</span>
-                            </motion.button>
-                        </motion.div>
-                    </AnimatePresence>
-                </div>
-            </div>
-            {isMobileMenuOpen && <div className={styles.overlay} onClick={() => setIsMobileMenuOpen(false)} />}
-        </nav>
-    );
+        <ul className={`${styles.navMenu} ${isOpen ? styles.active : ''}`}>
+          {navItems.map((item) => (
+            <li key={item.id} className={styles.navItem}>
+              <Link 
+                href={item.path} 
+                className={`${styles.navLink} ${pathname === item.path ? styles.active : ''}`}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.icon}
+                <span>{item.title}</span>
+              </Link>
+            </li>
+          ))}
+          <li className={styles.navItem}>
+            <button onClick={handleLogout} className={styles.logoutButton}>
+              <FaSignOutAlt />
+              <span>Logout</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 }

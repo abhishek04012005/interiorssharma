@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { supabase } from '../../supabase/Supabase';
 import styles from './adminlogin.module.css';
 import { toast } from 'react-hot-toast';
-import { FaUser, FaLock } from 'react-icons/fa';
+import { FaUser, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function AdminLogin() {
   const [credentials, setCredentials] = useState({
@@ -13,6 +13,8 @@ export default function AdminLogin() {
   });
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -75,7 +77,7 @@ export default function AdminLogin() {
           <div className={styles.inputGroup}>
             <FaLock className={styles.inputIcon} />
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Password"
               value={credentials.password}
@@ -83,6 +85,15 @@ export default function AdminLogin() {
               required
               disabled={isLoading}
             />
+            <button
+              type="button"
+              className={styles.passwordToggle}
+              onClick={() => setShowPassword(!showPassword)}
+              tabIndex={-1}
+              aria-label={showPassword ? "Hide password" : "Show password"}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
           </div>
 
           <button

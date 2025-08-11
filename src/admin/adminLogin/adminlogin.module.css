@@ -77,3 +77,31 @@
     background: #ccc;
     cursor: not-allowed;
 }
+
+.passwordToggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.passwordToggle:hover {
+  color: #c8a97e;
+}
+
+.passwordToggle:focus {
+  outline: none;
+}
+
+/* Update existing input styles to accommodate the toggle button */
+.inputGroup input {
+  padding-right: 3rem;
+}
