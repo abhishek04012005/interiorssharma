@@ -3,6 +3,7 @@
   margin: 0 auto;
   background: #f8f9fa;
   min-height: 100vh;
+  padding-top: 6rem;
 }
 
 .dashboard h1 {
@@ -131,6 +132,8 @@
 @media (max-width: 640px) {
   .dashboard {
     padding: 1rem;
+      padding-top: 6rem;
+
   }
 
   .statsGrid {

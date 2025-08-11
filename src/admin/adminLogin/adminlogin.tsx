@@ -29,10 +29,13 @@ export default function AdminLogin() {
       if (error) throw error;
 
       if (data) {
-        // Store admin session
+        // Set both cookie and localStorage
+        document.cookie = 'adminAuth=true; path=/';
         localStorage.setItem('adminAuth', 'true');
+
         toast.success('Login successful!');
         router.push('/admin/dashboard/contact');
+        router.refresh(); // Force a router refresh
       } else {
         toast.error('Invalid credentials');
       }
@@ -82,8 +85,8 @@ export default function AdminLogin() {
             />
           </div>
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className={styles.loginButton}
             disabled={isLoading}
           >

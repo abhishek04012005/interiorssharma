@@ -1,4 +1,4 @@
-import AdminLogin from '../../admin/adminLogin/adminlogin';
+import AdminLogin from '../../../admin/adminLogin/adminlogin';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
