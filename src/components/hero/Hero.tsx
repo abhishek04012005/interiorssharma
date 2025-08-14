@@ -9,7 +9,8 @@ const Hero = () => {
       <div className={styles.overlay}></div>
       <div className={styles.heroContent}>
         <h1 className={styles.title}>
-          <span className={styles.welcomeText}>Welcome to</span>
+          <span className={styles.welcomeText}
+          >Welcome to</span>
           <span className={styles.companyName}>Sharma Interiors</span>
         </h1>
         <p className={styles.subtitle}>

@@ -17,7 +17,7 @@ const projects = [
     category: 'Commercial',
     image: Project1,
     description: 'Corporate office interiors with sleek design, collaborative zones, and smart lighting.',
-    location: 'Andheri, Mumbai, India',
+    location: 'Mumbai, India',
     area: '3200 sq.ft',
     duration: '4 months'
   },
@@ -57,7 +57,7 @@ const projects = [
     category: 'Commercial',
     image: Project5,
     description: 'State-of-the-art laboratory setup with precision zoning and compliance-ready finishes.',
-    location: 'Thane, Maharashtra, India',
+    location: 'E wing 202 Zelion Kanakiya Building Kurla BKC',
     area: '2700 sq.ft',
     duration: '4 months'
   },
@@ -67,7 +67,7 @@ const projects = [
     category: 'Industrial',
     image: Project6,
     description: 'Ayurvedic manufacturing facility with cleanroom partitions and efficient workflow design.',
-    location: 'Dadar, Mumbai, India',
+    location: 'Plot Number F 10  Rasaini Patal Ganga',
     area: '6000 sq.ft',
     duration: '5.5 months'
   }
