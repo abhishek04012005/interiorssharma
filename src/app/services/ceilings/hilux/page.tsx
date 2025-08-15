@@ -17,7 +17,7 @@ export default function CabinetsPage() {
 
   // Find cabinets subservice
   const cabinetsService = woodenWorks.subItems.find(
-    item => item.path === '/services/ceiling/hilux'
+    item => item.path === '/services/ceilings/hilux'
   );
 
   if (!cabinetsService) {

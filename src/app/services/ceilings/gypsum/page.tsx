@@ -17,7 +17,7 @@ export default function CabinetsPage() {
 
   // Find cabinets subservice
   const cabinetsService = woodenWorks.subItems.find(
-    item => item.path === '/services/ceiling/gypsum'
+    item => item.path === '/services/ceilings/gypsum'
   );
 
   if (!cabinetsService) {

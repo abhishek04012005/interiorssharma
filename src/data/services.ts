@@ -218,7 +218,7 @@ export const services: ServiceItem[] = [
   {
     id: 3,
     title: "Ceiling Works",
-    path: "/services/ceiling",
+    path: "/services/ceilings",
     description: "Professional ceiling solutions for enhanced aesthetics.",
     image: Ceiling,
     heroBackground: Ceiling,
@@ -226,7 +226,7 @@ export const services: ServiceItem[] = [
     subItems: [
       {
         name: "Hilux False Ceiling",
-        path: "/services/ceiling/hilux",
+        path: "/services/ceilings/hilux",
         description: "Modern Hilux false ceiling installations.",
         image: HiluxCeiling,
         specifications: {
@@ -238,7 +238,7 @@ export const services: ServiceItem[] = [
       },
       {
         name: "Gypsum False Ceiling",
-        path: "/services/ceiling/gypsum",
+        path: "/services/ceilings/gypsum",
         description: "Creative gypsum false ceiling designs.",
         image: GypsumCeiling,
         specifications: {
@@ -250,7 +250,7 @@ export const services: ServiceItem[] = [
       },
       {
         name: "Armstrong Ceiling Grid",
-        path: "/services/ceiling/armstrong-grid",
+        path: "/services/ceilings/armstrong-grid",
         description: "Acoustic Armstrong ceiling grids for clean, modular layouts.",
         image: ArmstrongCeiling,
         specifications: {
