@@ -160,6 +160,7 @@
 .featuresContent,
 .specificationsContent,
 .processContent {
+  margin-top: 4rem;
   animation: fadeIn 0.5s ease;
 }
 

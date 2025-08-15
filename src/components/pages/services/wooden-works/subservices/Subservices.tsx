@@ -93,7 +93,7 @@ export default function SubItemDetail({ parentService, subItem }: SubItemDetailP
       </motion.section>
 
       {/* Navigation Tabs */}
-      <div className={styles.tabsContainer}>
+      {/* <div className={styles.tabsContainer}>
         <div className={styles.tabs}>
           {availableSections.map((tab) => (
             <button
@@ -105,11 +105,11 @@ export default function SubItemDetail({ parentService, subItem }: SubItemDetailP
             </button>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Content Sections */}
       <div className={styles.contentSection}>
-        {activeSection === 'overview' && (
+        {/* {activeSection === 'overview' && ( */}
           <div className={styles.overviewContent}>
             <h2>Overview</h2>
             <p>{subItem.description}</p>
@@ -133,13 +133,13 @@ export default function SubItemDetail({ parentService, subItem }: SubItemDetailP
               </div>
             )}
           </div>
-        )}
+        {/* )} */}
 
-        {activeSection === 'features' && subItem.features && (
+        {/* {activeSection === 'features' && subItem.features && ( */}
           <div className={styles.featuresContent}>
             <h2>Features</h2>
             <div className={styles.featuresGrid}>
-              {subItem.features.map((feature, index) => (
+              {subItem.features && subItem.features.map((feature, index) => (
                 <motion.div
                   key={index}
                   className={styles.featureCard}
@@ -154,33 +154,34 @@ export default function SubItemDetail({ parentService, subItem }: SubItemDetailP
               ))}
             </div>
           </div>
-        )}
+        {/* )} */}
 
-        {activeSection === 'specifications' && subItem.specifications && (
+        {/* {activeSection === 'specifications' && subItem.specifications && ( */}
           <div className={styles.specificationsContent}>
             <h2>Specifications</h2>
             <div className={styles.specificationsGrid}>
-              {Object.entries(subItem.specifications).map(([key, value], index) => (
-                <motion.div
-                  key={key}
-                  className={styles.specCard}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <h3>{key.charAt(0).toUpperCase() + key.slice(1)}</h3>
-                  <p>{value}</p>
-                </motion.div>
-              ))}
+              {subItem.specifications &&
+                Object.entries(subItem.specifications).map(([key, value], index) => (
+                  <motion.div
+                    key={key}
+                    className={styles.specCard}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <h3>{key.charAt(0).toUpperCase() + key.slice(1)}</h3>
+                    <p>{value}</p>
+                  </motion.div>
+                ))}
             </div>
           </div>
-        )}
+         {/* )} */}
 
-        {activeSection === 'process' && subItem.process && (
+        {/* {activeSection === 'process' && subItem.process && ( */}
           <div className={styles.processContent}>
-            <h2>{subItem.process.title}</h2>
+            <h2>{subItem.process?.title}</h2>
             <div className={styles.processSteps}>
-              {subItem.process.steps.map((step, index) => (
+              {subItem.process?.steps.map((step, index) => (
                 <motion.div
                   key={index}
                   className={styles.processStep}
@@ -196,7 +197,7 @@ export default function SubItemDetail({ parentService, subItem }: SubItemDetailP
               ))}
             </div>
           </div>
-        )}
+        {/* )} */}
       </div>
 
       {/* Contact Section */}
