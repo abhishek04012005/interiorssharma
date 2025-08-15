@@ -112,6 +112,7 @@ export default function ContactDashboard() {
                                 <th>Name</th>
                                 <th>Phone</th>
                                 <th>Service</th>
+                                <th>Message</th>
                                 <th>Date</th>
                             </tr>
                         </thead>
@@ -121,6 +122,7 @@ export default function ContactDashboard() {
                                     <td>{contact.name}</td>
                                     <td>{contact.phone}</td>
                                     <td>{contact.dropdown}</td>
+                                    <td>{contact.message}</td>
                                     <td>{new Date(contact.created_at).toLocaleDateString()}</td>
                                 </tr>
                             ))}
