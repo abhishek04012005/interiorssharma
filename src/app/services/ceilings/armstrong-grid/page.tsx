@@ -10,14 +10,14 @@ export const metadata = {
 export default function CabinetsPage() {
   // Find wooden works service
   const woodenWorks = services.find(service => service.id === 3);
-  
+
   if (!woodenWorks) {
     notFound();
   }
 
   // Find cabinets subservice
   const cabinetsService = woodenWorks.subItems.find(
-    item => item.path === '/services/ceilings/armstrong'
+    item => item.path === '/services/ceilings/armstrong-grid'
   );
 
   if (!cabinetsService) {
@@ -26,19 +26,14 @@ export default function CabinetsPage() {
 
   return (
     <Subservices
-      parentService={{
-        id: woodenWorks.id,
-        title: woodenWorks.title,
-        path: woodenWorks.path,
-        description: woodenWorks.description,
-        image: woodenWorks.image,
-        heroBackground: woodenWorks.heroBackground,
-        ctaBackground: woodenWorks.ctaBackground,
-        subItems: woodenWorks.subItems,
-      }}
+      parentService={woodenWorks}
+
       subItem={{
         ...cabinetsService,
-        image: typeof cabinetsService.image === 'string' ? cabinetsService.image : cabinetsService.image.src,
+        image:
+          typeof cabinetsService.image === 'string'
+            ? cabinetsService.image
+            : cabinetsService.image.src,
       }}
     />
   );

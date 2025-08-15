@@ -92,20 +92,7 @@ export default function SubItemDetail({ parentService, subItem }: SubItemDetailP
         </div>
       </motion.section>
 
-      {/* Navigation Tabs */}
-      {/* <div className={styles.tabsContainer}>
-        <div className={styles.tabs}>
-          {availableSections.map((tab) => (
-            <button
-              key={tab}
-              className={`${styles.tab} ${activeSection === tab ? styles.active : ''}`}
-              onClick={() => setActiveSection(tab)}
-            >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
-            </button>
-          ))}
-        </div>
-      </div> */}
+     
 
       {/* Content Sections */}
       <div className={styles.contentSection}>

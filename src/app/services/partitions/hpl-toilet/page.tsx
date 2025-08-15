@@ -27,6 +27,7 @@ export default function CabinetsPage() {
   return (
     <Subservices
       parentService={woodenWorks}
+
       subItem={{
         ...cabinetsService,
         image:

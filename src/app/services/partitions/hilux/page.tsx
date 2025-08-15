@@ -10,7 +10,7 @@ export const metadata = {
 export default function CabinetsPage() {
   // Find wooden works service
   const woodenWorks = services.find(service => service.id === 2);
-  
+
   if (!woodenWorks) {
     notFound();
   }
@@ -27,13 +27,13 @@ export default function CabinetsPage() {
   return (
     <Subservices
       parentService={woodenWorks}
+
       subItem={{
-        name: cabinetsService.name,
-        path: cabinetsService.path,
-        description: cabinetsService.description,
-        image: typeof cabinetsService.image === 'string'
-          ? cabinetsService.image
-          : cabinetsService.image.src, // Extract string if StaticImageData
+        ...cabinetsService,
+        image:
+          typeof cabinetsService.image === 'string'
+            ? cabinetsService.image
+            : cabinetsService.image.src,
       }}
     />
   );

@@ -10,7 +10,7 @@ export const metadata = {
 export default function CabinetsPage() {
   // Find wooden works service
   const woodenWorks = services.find(service => service.id === 4);
-  
+
   if (!woodenWorks) {
     notFound();
   }
@@ -26,24 +26,18 @@ export default function CabinetsPage() {
 
   return (
     <Subservices
-      parentService={{
-        id: woodenWorks.id,
-        title: woodenWorks.title,
-        path: woodenWorks.path,
-        description: woodenWorks.description,
-        image: woodenWorks.image,
-        heroBackground: woodenWorks.heroBackground,
-        ctaBackground: woodenWorks.ctaBackground,
-        subItems: woodenWorks.subItems,
-      }}
+      parentService={woodenWorks}
+
       subItem={{
-        name: cabinetsService.name,
-        path: cabinetsService.path,
-        description: cabinetsService.description,
-        image: typeof cabinetsService.image === 'string'
-          ? cabinetsService.image
-          : (cabinetsService.image.src ?? ''),
+        ...cabinetsService,
+        image:
+          typeof cabinetsService.image === 'string'
+            ? cabinetsService.image
+            : cabinetsService.image.src,
       }}
     />
+
   );
 }
+
+
