@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Footer.module.css';
-import { FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaPinterest } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa6';
 import Logo from '../../assets/logo.png'
 
@@ -77,10 +77,9 @@ const Footer = () => {
             </p>
             <div className={styles.socialLinks}>
               {[
-                { icon: <FaFacebookF />, href: 'https://facebook.com' },
-                { icon: <FaTwitter />, href: 'https://twitter.com' },
-                { icon: <FaInstagram />, href: 'https://instagram.com' },
-                { icon: <FaLinkedinIn />, href: 'https://linkedin.com' }
+                { icon: <FaFacebookF />, href: 'https://www.facebook.com/share/1a5ttqDvyZ/' },
+                { icon: <FaInstagram />, href: 'https://www.instagram.com/interiorssharma191?utm_source=qr&igsh=MXB0NzFhd3lwa2VieQ==' },
+                { icon: <FaPinterest />, href: 'https://pin.it/3ElLL4Wo1' }
               ].map((social, index) => (
                 <a
                   key={index}
