@@ -3,6 +3,7 @@ import { IoClose } from 'react-icons/io5';
 import styles from './PopUpModel.module.css';
 import { supabase } from '@/supabase/Supabase';
 import toast from 'react-hot-toast';
+import Popup from '../message-popup/PopUp';
 
 interface QuotePopupProps {
   isOpen: boolean;
@@ -16,7 +17,8 @@ export default function QuotePopup({ isOpen, onClose, selectedWork }: QuotePopup
     phone: '',
     service: selectedWork || 'Wooden Works',
   });
-  const [, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const services = [
     'Wooden Works',
@@ -42,15 +44,19 @@ export default function QuotePopup({ isOpen, onClose, selectedWork }: QuotePopup
         ]);
 
 
+
       if (error) throw error;
 
-      toast.success('Quote request submitted successfully!');
+      setShowSuccessPopup(true);
       setFormData({
         name: '',
         phone: '',
         service: selectedWork || 'Wooden Works',
       });
-      onClose();
+
+      setTimeout(() => {
+        onClose();
+      }, 2000);
     } catch (error) {
       console.error('Error submitting form:', error);
       toast.error('Failed to submit quote request');
@@ -71,67 +77,78 @@ export default function QuotePopup({ isOpen, onClose, selectedWork }: QuotePopup
   if (!isOpen) return null;
 
   return (
-    <div className={styles.modalContainer}>
-      <div className={styles.overlay} onClick={onClose} />
-      <div className={styles.popup}>
-        <button className={styles.closeButton} onClick={onClose}>
-          <IoClose />
-        </button>
+    <>
+      <div className={styles.modalContainer}>
+        <div className={styles.overlay} onClick={onClose} />
+        <div className={styles.popup}>
+          <button className={styles.closeButton} onClick={onClose}>
+            <IoClose />
+          </button>
 
-        <div className={styles.popupContent}>
-          <h2 className={styles.title}>Request a Quote</h2>
-          <div className={styles.headerLine} />
-          <p className={styles.subtitle}>Fill in your details and we&apos;ll get back to you</p>
+          <div className={styles.popupContent}>
+            <h2 className={styles.title}>Request a Quote</h2>
+            <div className={styles.headerLine} />
+            <p className={styles.subtitle}>Fill in your details and we&apos;ll get back to you</p>
 
-          <form onSubmit={handleSubmit} className={styles.form}>
-            <div className={styles.formGrid}>
-              <div className={styles.formGroup}>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your Name"
-                  required
-                  className={styles.input}
-                />
+            <form onSubmit={handleSubmit} className={styles.form}>
+              <div className={styles.formGrid}>
+                <div className={styles.formGroup}>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your Name"
+                    required
+                    className={styles.input}
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Phone Number"
+                    required
+                    className={styles.input}
+                  />
+                </div>
               </div>
 
               <div className={styles.formGroup}>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
+                <select
+                  name="service"
+                  value={formData.service}
                   onChange={handleChange}
-                  placeholder="Phone Number"
+                  className={styles.select}
                   required
-                  className={styles.input}
-                />
+                >
+                  {services.map(service => (
+                    <option key={service} value={service}>
+                      {service}
+                    </option>
+                  ))}
+                </select>
               </div>
-            </div>
 
-            <div className={styles.formGroup}>
-              <select
-                name="service"
-                value={formData.service}
-                onChange={handleChange}
-                className={styles.select}
-                required
+              <button
+                type="submit"
+                className={styles.submitButton}
+                disabled={isSubmitting}
               >
-                {services.map(service => (
-                  <option key={service} value={service}>
-                    {service}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <button type="submit" className={styles.submitButton}>
-              Submit Request
-            </button>
-          </form>
+                {isSubmitting ? 'Submitting...' : 'Submit Request'}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+      <Popup
+        isOpen={showSuccessPopup}
+        onClose={() => setShowSuccessPopup(false)}
+        message="Your quote request has been submitted successfully!"
+      />
+    </>
   );
 }

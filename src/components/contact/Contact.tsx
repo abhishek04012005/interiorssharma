@@ -5,6 +5,7 @@ import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { FaPhone } from "react-icons/fa6";
 import { supabase } from '../../supabase/Supabase'
 import { toast } from 'react-hot-toast';
+import Popup from '@/custom/message-popup/PopUp';
 
 const contactInfo = [
   {
@@ -46,7 +47,8 @@ const Contact = () => {
     dropdown: '',
     message: ''
   });
-  const [, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,9 +67,10 @@ const Contact = () => {
           }
         ]);
 
+
       if (error) throw error;
 
-      toast.success('Message sent successfully!');
+      setShowPopup(true);
       setFormData({ name: '', phone: '', dropdown: '', message: '' });
     } catch (error) {
       console.error('Error:', error);
@@ -158,10 +161,20 @@ const Contact = () => {
                 required
                 rows={6}
               ></textarea>
-              <button type="submit" className={styles.submitButton}>
-                Send Message
+              <button
+                type="submit"
+                className={styles.submitButton}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
+
+            <Popup
+              isOpen={showPopup}
+              onClose={() => setShowPopup(false)}
+              message="Thank you! Your message has been sent successfully."
+            />
           </div>
         </div>
       </div>
