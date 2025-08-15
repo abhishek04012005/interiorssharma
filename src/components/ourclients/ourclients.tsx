@@ -8,6 +8,7 @@ import ClientLogo3 from '../../assets/client/dhootap.png';
 import ClientLogo4 from '../../assets/client/indicame.png';
 import ClientLogo5 from '../../assets/client/ishwarya.png';
 import ClientLogo6 from '../../assets/client/mgm.png';
+import ClientLogo7 from '../../assets/client/alkem.png'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
@@ -19,8 +20,8 @@ import 'swiper/css/navigation';
 const clients = [
   {
     id: 1,
-    name: 'JP Morgan',
-    logo: ClientLogo1,
+    name: 'Alkem',
+    logo: ClientLogo7,
     project: 'Corporate Office Interior',
     testimonial: 'The team delivered a sleek, functional workspace that reflects our brand’s professionalism. Truly impressive execution.'
   },
@@ -58,7 +59,14 @@ const clients = [
     logo: ClientLogo6,
     project: 'Medical Facility Renovation',
     testimonial: 'From patient rooms to operation zones, every detail was handled with care. The result is a modern, efficient hospital space.'
-  }
+  },
+  {
+    id: 7,
+    name: 'JP Morgan',
+    logo: ClientLogo1,
+    project: 'Corporate Office Interior',
+    testimonial: 'The team delivered a sleek, functional workspace that reflects our brand’s professionalism. Truly impressive execution.'
+  },
 ];
 
 

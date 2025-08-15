@@ -17,7 +17,7 @@ const projects = [
     title: 'Alkem',
     category: 'Commercial',
     image: Project7,
-    description: 'Corporate office interiors with sleek design, collaborative zones, and smart lighting.',
+    description: 'Designed for Alkem Laboratories, a leading pharmaceutical company, this 3200 sq.ft Mumbai office blends sleek aesthetics with functional innovation.',
     location: 'Mumbai, India',
     area: '3200 sq.ft',
     duration: '4 months'
