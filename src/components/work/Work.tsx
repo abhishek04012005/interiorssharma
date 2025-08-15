@@ -97,18 +97,7 @@ const Work = () => {
                     className={styles.workImage}
                     priority={index < 2}
                   />
-                  <motion.div
-                    className={styles.imageOverlay}
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                    </motion.div>
-                  </motion.div>
+                  
                 </div>
               </div>
               <motion.div

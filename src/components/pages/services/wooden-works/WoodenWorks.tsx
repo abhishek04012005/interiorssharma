@@ -81,21 +81,6 @@ export default function WoodenWorks({ service }: WoodenWorksProps) {
                                             className={styles.serviceImage}
                                             priority={index < 2}
                                         />
-                                        <motion.div
-                                            className={styles.imageOverlay}
-                                            initial={{ opacity: 0 }}
-                                            whileHover={{ opacity: 1 }}
-                                            transition={{ duration: 0.3 }}
-                                        >
-                                            <motion.div
-                                                whileHover={{ scale: 1.05 }}
-                                                transition={{ duration: 0.2 }}
-                                            >
-                                                <Link href={item.path} className={styles.viewGalleryBtn}>
-                                                    View Gallery
-                                                </Link>
-                                            </motion.div>
-                                        </motion.div>
                                     </div>
                                 </div>
                                 <motion.div

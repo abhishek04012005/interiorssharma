@@ -9,13 +9,14 @@ import Project3 from '../../assets/projects/ihc.png'
 import Project4 from '../../assets/projects/ishwaryahealth.png'
 import Project5 from '../../assets/projects/galpha.jpg'
 import Project6 from '../../assets/projects/sd.jpg'
+import Project7 from '../../assets/projects/alkem.png'
 
 const projects = [
   {
     id: 1,
-    title: 'JP Morgan Tata Ticno',
+    title: 'Alkem',
     category: 'Commercial',
-    image: Project1,
+    image: Project7,
     description: 'Corporate office interiors with sleek design, collaborative zones, and smart lighting.',
     location: 'Mumbai, India',
     area: '3200 sq.ft',
@@ -70,7 +71,17 @@ const projects = [
     location: 'Plot Number F 10  Rasaini Patal Ganga',
     area: '6000 sq.ft',
     duration: '5.5 months'
-  }
+  },
+  {
+    id: 7,
+    title: 'JP Morgan Tata Ticno',
+    category: 'Commercial',
+    image: Project1,
+    description: 'Corporate office interiors with sleek design, collaborative zones, and smart lighting.',
+    location: 'Mumbai, India',
+    area: '3200 sq.ft',
+    duration: '4 months'
+  },
 ];
 
 
