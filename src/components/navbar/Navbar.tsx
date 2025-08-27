@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 import Image from 'next/image';
@@ -20,16 +20,19 @@ const navItems: NavItem[] = [
 ];
 
 const Navbar = () => {
+  const menuRef = useRef<HTMLUListElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isOpen && menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
 
   return (
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
@@ -38,8 +41,8 @@ const Navbar = () => {
           <Image className={styles.logoImage} src={Logo} alt="Sharma Interiors" width={150} height={50} />
         </Link>
 
-        <div 
-          className={`${styles.hamburger} ${isOpen ? styles.active : ''}`} 
+        <div
+          className={`${styles.hamburger} ${isOpen ? styles.active : ''}`}
           onClick={() => setIsOpen(!isOpen)}
         >
           <div className={styles.hamburgerIcon}>
@@ -49,12 +52,12 @@ const Navbar = () => {
           </div>
         </div>
 
-        <ul className={`${styles.navMenu} ${isOpen ? styles.active : ''}`}>
+        <ul ref={menuRef} className={`${styles.navMenu} ${isOpen ? styles.active : ''}`}>
           {navItems.map((item) => (
             <li key={item.id} className={styles.navItem}>
-              <Link 
-                href={item.path} 
-                className={styles.navLink} 
+              <Link
+                href={item.path}
+                className={styles.navLink}
                 onClick={() => setIsOpen(false)}
               >
                 {item.title}

@@ -176,7 +176,20 @@ const Contact = () => {
               message="Thank you! Your message has been sent successfully."
             />
           </div>
+
+
+
         </div>
+
+          <div className={styles.map}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.747606245659!2d72.8403254!3d19.423308199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4121a8960f0971d%3A0x4dc86d5e2721ed6a!2sSharma%20Interiors!5e0!3m2!1sen!2sin!4v1756292748208!5m2!1sen!2sin"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+
       </div>
     </section>
   );
