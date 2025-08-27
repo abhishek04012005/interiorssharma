@@ -1,7 +1,7 @@
 
 import { StaticImageData } from "next/image";
 
-import Image1 from "../assets/hero.jpg";
+import WoodenWork1 from "../assets/woodenworks/wooden.png"
 
 import WoodenWorks from "../assets/woodenworks/woodenworks.jpg";
 import ConferenceTable from "../assets/woodenworks/conferencetable.jpg";
@@ -71,7 +71,7 @@ export const services: ServiceItem[] = [
     title: "Wooden Works",
     path: "/services/wooden-works",
     description: "Expert craftsmanship in custom wooden furniture and installations.",
-    image: Image1,
+    image: WoodenWork1,
     heroBackground: WoodenWorks,
     ctaBackground: "/images/cta-background.jpg",
     subItems: [
