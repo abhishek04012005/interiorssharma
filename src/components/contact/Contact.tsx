@@ -81,10 +81,49 @@ const Contact = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+
+    switch (name) {
+      case 'name':
+        // Allow only alphabets and spaces
+        const alphabetsOnly = value.replace(/[^a-zA-Z\s]/g, '');
+        setFormData(prev => ({
+          ...prev,
+          [name]: alphabetsOnly
+        }));
+        break;
+
+      case 'phone':
+        // Allow only valid Indian mobile numbers
+        const numbersOnly = value.replace(/\D/g, '').slice(0, 10);
+        if (numbersOnly.length > 0) {
+          const firstDigit = parseInt(numbersOnly[0]);
+          if (firstDigit >= 6 && firstDigit <= 9) {
+            setFormData(prev => ({
+              ...prev,
+              [name]: numbersOnly
+            }));
+          } else if (numbersOnly.length === 1) {
+            // If first digit is invalid, don't set it
+            setFormData(prev => ({
+              ...prev,
+              [name]: ''
+            }));
+          }
+        } else {
+          setFormData(prev => ({
+            ...prev,
+            [name]: numbersOnly
+          }));
+        }
+        break;
+
+      default:
+        setFormData(prev => ({
+          ...prev,
+          [name]: value
+        }));
+    }
   };
 
   return (
@@ -136,6 +175,9 @@ const Contact = () => {
                   placeholder="Your Phone"
                   value={formData.phone}
                   onChange={handleChange}
+                  pattern="^[6-9]\d{9}$"
+                  maxLength={10}
+                  title="Please enter valid 10-digit mobile number starting with 6, 7, 8, or 9"
                   required
                 />
               </div>
@@ -181,14 +223,14 @@ const Contact = () => {
 
         </div>
 
-          <div className={styles.map}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.747606245659!2d72.8403254!3d19.423308199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4121a8960f0971d%3A0x4dc86d5e2721ed6a!2sSharma%20Interiors!5e0!3m2!1sen!2sin!4v1756292748208!5m2!1sen!2sin"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
+        <div className={styles.map}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.747606245659!2d72.8403254!3d19.423308199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4121a8960f0971d%3A0x4dc86d5e2721ed6a!2sSharma%20Interiors!5e0!3m2!1sen!2sin!4v1756292748208!5m2!1sen!2sin"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
 
       </div>
     </section>

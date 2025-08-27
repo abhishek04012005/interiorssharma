@@ -65,13 +65,50 @@ export default function QuotePopup({ isOpen, onClose, selectedWork }: QuotePopup
     }
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+
+    switch (name) {
+      case 'name':
+        // Allow only alphabets and spaces
+        const alphabetsOnly = value.replace(/[^a-zA-Z\s]/g, '');
+        setFormData(prev => ({
+          ...prev,
+          [name]: alphabetsOnly
+        }));
+        break;
+
+      case 'phone':
+        // Allow only valid Indian mobile numbers
+        const numbersOnly = value.replace(/\D/g, '').slice(0, 10);
+        if (numbersOnly.length > 0) {
+          const firstDigit = parseInt(numbersOnly[0]);
+          if (firstDigit >= 6 && firstDigit <= 9) {
+            setFormData(prev => ({
+              ...prev,
+              [name]: numbersOnly
+            }));
+          } else if (numbersOnly.length === 1) {
+            // If first digit is invalid, don't set it
+            setFormData(prev => ({
+              ...prev,
+              [name]: ''
+            }));
+          }
+        } else {
+          setFormData(prev => ({
+            ...prev,
+            [name]: numbersOnly
+          }));
+        }
+        break;
+
+      default:
+        setFormData(prev => ({
+          ...prev,
+          [name]: value
+        }));
+    }
   };
 
   if (!isOpen) return null;
@@ -111,8 +148,11 @@ export default function QuotePopup({ isOpen, onClose, selectedWork }: QuotePopup
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Phone Number"
-                    required
                     className={styles.input}
+                    pattern="^[6-9]\d{9}$"
+                    maxLength={10}
+                    title="Please enter valid 10-digit mobile number starting with 6, 7, 8, or 9"
+                    required
                   />
                 </div>
               </div>

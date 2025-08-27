@@ -25,7 +25,7 @@ const projects = [
   {
     id: 2,
     title: 'MGM Hospital ',
-    category: 'Healthcare',
+    category: 'Hospital',
     image: Project2,
     description: 'Functional and hygienic hospital interiors with patient-centric design and durable materials.',
     location: 'Kamothe, Navi Mumbai, India',
@@ -35,7 +35,7 @@ const projects = [
   {
     id: 3,
     title: 'Indicame Health Care',
-    category: 'Commercial',
+    category: 'Hospital',
     image: Project3,
     description: 'Modern healthcare workspace with ergonomic layouts and efficient space planning.',
     location: 'Bandra, Mumbai, India',
@@ -45,7 +45,7 @@ const projects = [
   {
     id: 4,
     title: 'Ishwarya Health Care Group',
-    category: 'Healthcare',
+    category: 'Hospital',
     image: Project4,
     description: 'Premium healthcare interiors with advanced infrastructure and calming aesthetics.',
     location: 'Chennai, Tamil Nadu, India',
@@ -55,7 +55,7 @@ const projects = [
   {
     id: 5,
     title: 'Galpha Laboratory',
-    category: 'Commercial',
+    category: 'Laboratory',
     image: Project5,
     description: 'State-of-the-art laboratory setup with precision zoning and compliance-ready finishes.',
     location: 'E wing 202 Zelion Kanakiya Building Kurla BKC',
@@ -65,7 +65,7 @@ const projects = [
   {
     id: 6,
     title: 'Shree Dhootapapeshwar Ltd',
-    category: 'Industrial',
+    category: 'Commercial',
     image: Project6,
     description: 'Ayurvedic manufacturing facility with cleanroom partitions and efficient workflow design.',
     location: 'Plot Number F 10  Rasaini Patal Ganga',
@@ -85,7 +85,7 @@ const projects = [
 ];
 
 
-const categories = ['All', 'Commercial', 'Residential', 'Retail'];
+const categories = ['All', 'Commercial', 'Hospital', 'Laboratory'];
 
 export default function Project() {
     const [selectedCategory, setSelectedCategory] = useState('All');

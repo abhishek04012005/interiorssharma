@@ -45,7 +45,7 @@ export default function AdminNavbar() {
   return (
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.navContainer}>
-        <Link href="/admin/dashboard" className={styles.logo}>
+        <Link href="/" className={styles.logo}>
           <Image 
             className={styles.logoImage} 
             src={Logo} 
